@@ -30,11 +30,7 @@
         margin-top: 10px;
         display: block;
       }
-      .input {
-        display: flex;
-        gap: 20px;
-      }
-      input {
+      input{
         padding: 10px;
         border-radius: 5px;
       }
