@@ -3,7 +3,9 @@
 
   function handleCountdownStart() {
     const input = document.getElementById('input')
+    const startButton = document.getElementById('startButton')
     input.style.display = 'none';
+    startButton.style.display = 'none'
 
     const inputDate = document.getElementById('inputDate').value
     
