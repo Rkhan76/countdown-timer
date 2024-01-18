@@ -2,27 +2,32 @@
   let totalSeconds;
 
   function handleCountdownStart() {
-    const input = document.getElementById('input')
-    const startButton = document.getElementById('startButton')
-    input.style.display = 'none';
-    startButton.style.display = 'none'
-
     const inputDate = document.getElementById('inputDate').value
-    
 
-    const futureDate = new Date(inputDate)
-    const currentDate = new Date()
-    totalSeconds = (futureDate - currentDate)/1000;
+    if(inputDate){
+       const input = document.getElementById('input')
+       const startButton = document.getElementById('startButton')
+       input.style.display = 'none'
+       startButton.style.display = 'none'
 
-    interval = setInterval(function () {
-      countDownfunction(totalSeconds)
-      totalSeconds--
+       const futureDate = new Date(inputDate)
+       const currentDate = new Date()
+       totalSeconds = (futureDate - currentDate) / 1000
 
-      if (totalSeconds < 0) {
-        clearInterval(intervalId)
-        alert('Countdown finished!')
-      }
-    }, 1000)
+       interval = setInterval(function () {
+         countDownfunction(totalSeconds)
+         totalSeconds--
+
+         if (totalSeconds < 0) {
+           clearInterval(intervalId)
+           alert('Countdown finished!')
+         }
+       }, 1000)
+    }else{
+      const warningMessage = document.getElementById('warningMessage')
+      warningMessage.innerText = "Please enter the input"
+      warningMessage.style.color = 'red'
+    }
   }
 
   function countDownfunction() {
